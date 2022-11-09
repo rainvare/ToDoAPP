@@ -26,8 +26,8 @@ El propósito de este proyecto fue crear una pequeña app de tareas, la cual cum
 
 ## :star: ¿Cómo desarrollé el proyecto? :star: :
 
-Primero, cree un entorno virtual para mi proyecto con (virtualenv)[https://pypi.org/project/pipenv/].
-Procedí a intarlar los programas necesarios para construir mi app, como python y django con pip:
+Primero, cree un entorno virtual para mi proyecto con [virtualenv](https://pypi.org/project/pipenv/).
+Procedí a instalar los programas necesarios para construir mi app, como python y django con pip:
 
 ```cmd
 pip install django
