@@ -1,0 +1,12 @@
+version: '1.0'
+
+services:
+
+  django:
+    build: .
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    command: "python3 manage.py runserver 0.0.0.0:8080"
