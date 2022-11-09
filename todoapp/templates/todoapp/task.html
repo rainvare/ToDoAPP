@@ -1,0 +1,37 @@
+{% extends "todoapp/main.html" %}
+{% block content %}
+<!-- Header-->
+<div class="header">
+<h1> Mirá lo que tenés pendiente</h1>
+</div>
+
+<!-- Detalle de tarea-->
+<div class="card">
+<h2> Tarea: {{task.title}} </h2>
+
+{% if task.description %}
+    <p>Descripción: {{task.description}} </p>
+{% else %}
+    <p> Ups, esta tarea no tiene una descripción</p>
+{% endif %}
+
+<p>Fecha de creación: {{task.date}} </p>
+
+<p>Está completa: </p>
+
+{% if task.complete %}
+ <p> ¡Sí! </p>
+ <a href="{% url 'borrar-tarea' task.id %}">
+    ¿Querés borrarla?
+</a>
+{% else %}
+<p> Aún no</p>
+{% endif %}
+
+</div>
+
+<!-- Botón de arrepentimiento-->
+<footer>
+<a href = "{% url 'lista-tareas' %}">Volver</a>
+</footer>
+{% endblock content %}

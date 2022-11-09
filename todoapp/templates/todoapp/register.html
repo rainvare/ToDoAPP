@@ -1,0 +1,27 @@
+{% extends "todoapp/main.html" %} {% block content %}
+<!-- Header-->
+<div class="header">
+  <h1>Crea tu cuenta</h1>
+</div>
+
+<!-- Form de registro-->
+<div class="card">
+  <form method="POST">
+    {% csrf_token %}
+
+    <label>{{form.username.label}}</label>
+    {{form.username}}
+
+    <label>{{form.password1.label}}</label>
+    {{form.password1}}
+
+    <label>{{form.password2.label}}</label>
+    {{form.password2}}
+
+    <input class="button" type="submit" value="Register" />
+  </form>
+<!-- Redirección a Login-->
+  <p>¿Ya tienes una cuenta? <a href="{% url 'login' %}"> Inicia sesión </a></p>
+</div>
+
+{% endblock content %}

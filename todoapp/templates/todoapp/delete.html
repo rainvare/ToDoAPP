@@ -1,0 +1,22 @@
+{% extends "todoapp/main.html" %}
+{% block content %}
+<!--Header-->
+<div class="header">
+<h1>Ooooh</h1>
+</div>
+
+<!-- Eliminar tarea-->
+<div class="card">
+<form method= "POST">
+ {% csrf_token %}
+ <p> ¿Seguro quieres borrar esta tarea? : {{task.title}} </p>
+ <input class="button" type="submit" value="Borrar">
+</form>
+</div>
+
+<!-- Botón de arrepentimiento-->
+
+<a href = "{% url 'lista-tareas' %}"> Volver </a>
+
+
+{% endblock content %}

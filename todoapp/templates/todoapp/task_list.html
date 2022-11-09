@@ -1,0 +1,64 @@
+{% extends "todoapp/main.html" %} {% block content %}
+
+<!-- USER AUTH-->
+<nav>
+  <ul>
+    {% if request.user.is_authenticated%}
+    <li><p>Hola, {{request.user|title}}</p></li>
+    <li>
+      <a href="{% url 'logout' %}">Logout</a>
+      {% else %}
+      <a href="{% url 'login' %}">Login</a>
+      {% endif %}
+    </li>
+  </ul>
+</nav>
+<hr />
+
+<!-- app-->
+<h1>Mis tareas</h1>
+
+<!-- form de búsqueda y filtro -->
+<form id="bloque-busqueda" method="GET">
+  <input placeholder="Ingresa nombre de la tarea" type="text" name="filterByTitle" value="{{filterByTitle}}" />
+  <input type="date" name="filterByDate" value="{{filterByDate}}" />
+  <input class="button" type="submit" value="Buscar" />
+</form>
+
+<!-- reload-->
+<div id="tsk-func">
+<a href="{% url 'lista-tareas' %}"> Ver todas mis tareas </a>
+
+<!-- Creación de tarea-->
+<a href="{% url 'crear-tarea' %}"> Crear nueva </a>
+</div>
+<!-- Lista de tareas-->
+<table>
+  <tr>
+    <br>
+    <h2>Tareas</h2>
+  </tr>
+
+  {% for task in tasks%}
+  <tr>
+    <td>{{task.title}}</td>
+
+    <!-- CRUD-->
+    <td>
+      <a href="{% url 'detalle-tarea-id' task.id %}"> Ver</a>
+    </td>
+    <td>
+      <a href="{% url 'editar-tarea-id' task.id %}"> Editar </a>
+    </td>
+    <td>
+      <a href="{% url 'borrar-tarea' task.id %}"> Borrar </a>
+    </td>
+  </tr>
+
+  <!-- Lista de tareas vacía-->
+  {% empty%}
+  <h4>No hay tareas aún</h4>
+  {% endfor%}
+</table>
+
+{% endblock content %}

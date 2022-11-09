@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="esp">
+
+<head>
+    <!--Metadatos-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>To Do List - Rainvare</title>
+    <meta name="description"
+    content="Esta es una TO DO LIST hecha en python y django">
+    <meta name="autor" content="rainvare">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Fuentes-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <style>
+        
+        body{
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	        background-size: 400% 400%;
+	        height: 100vh;
+            font-family: Poppins, sans-serif;
+            padding-top: 50px;
+    
+        }
+
+        h1{
+            color: #23d5ab
+        }
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6{
+   
+            color: #23a6d5;
+        }
+
+        p{
+            color: #959595;
+         }
+
+        a{
+            color: #e73c7e;
+            font-weight: 600;
+            text-decoration:none;
+         }
+        
+        .container{
+            display: flex;
+            flex-direction: column;
+            background-color: #fafafa;
+            max-width: 650px;
+            margin: auto;
+            padding: 30px;
+            -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+            box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+        
+        }
+        .button{
+            border: 1px solid #757575;
+            margin: 5px;
+            align-self: center;
+            font-size: 14px;
+            width: 150px;
+            background-color: #23a6d5;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            padding: 10px;
+        }
+        button a{
+        color: #fff;
+        }
+
+        input {
+            outline: none;
+            border: none;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        .card {
+            padding: 20px;
+        }
+
+        footer{
+            position: relative;
+            text-align: center;
+            width: 150px;
+            background-color: #23d5ab;
+        }
+        footer a{
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        }
+
+        #bloque-busqueda{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+                background-color:#23d5ab;
+        }
+        @media screen and (max-width:320px) {
+            #bloque-busqueda {
+                padding: 10px;
+            }
+        }
+
+        nav{
+            display: flex;
+            flex-direction: row;
+        }
+        nav ul li a{
+            color:#23a6d5;
+        }
+
+        #tsk-func{
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        justify-content: space-around;
+        
+        }
+        #tsk-func a{
+        color: #fafafa;
+        width: 200px;
+        padding: 10px;
+        background-color: #23a6d5;
+        text-align: center;
+        }
+
+        input[type=text],
+        input[type=date],
+        input[type=password],
+        textarea {
+            border: 1px solid #757575;
+            border-radius: 5px;
+            padding: 10px;
+            width: 90%;
+            gap:5px;
+        }
+        label {
+            padding-top: 10px !important;
+            display: block;
+        }
+        ::placeholder {
+            font-weight: 300;
+            opacity: 0.5;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        {% block content %} 
+        {% endblock content %}
+    </div>
+
+</body>
+
+
+</html>

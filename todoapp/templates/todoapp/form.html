@@ -1,0 +1,19 @@
+{% extends "todoapp/main.html" %}
+{% block content %}
+<!-- Header -->
+<div class="header">
+<h1> Formulario </h1>
+</div>
+
+<!-- Form de Tarea -->
+<form method= "POST" action="">
+ {% csrf_token %}
+ {{form.as_p}}
+ <input class="button" type="submit" value="Crear">
+</form>
+
+<!-- Botón de arrepentimiento -->
+<a href = "{% url 'lista-tareas' %}"> Volver </a>
+
+
+{% endblock content %}
